@@ -1,0 +1,61 @@
+body {
+    display: block;
+    margin:  0px;
+    background-color: aquamarine;
+}
+
+div.wrep {
+    
+    width: 800px;
+    margin: auto;
+}
+
+#input {
+   
+    width: 602px;
+    height: 100px;
+    border-radius: 5%;
+    font-size: 50px;
+}
+
+#btn {
+    
+    width: 150px;
+    height: 50px;
+    border-radius: 10%;
+    font-size: 23px;
+    margin-left: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    position: relative;
+    width: 800px;
+    height: 100px;
+    border-radius: 5%;
+    font-size: 50px;
+    margin: auto;
+    margin-top: 20px;
+    line-height: 100px;
+    padding-left: 30px;
+   
+    border-radius: 5%;
+    background-color: rgb(225, 219, 37);
+}
+
+.item button {
+    position: absolute;
+    width: 10%;
+    height: 38%;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+
+    background-color: rgb(211, 113, 146);
+}
