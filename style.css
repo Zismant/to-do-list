@@ -3,11 +3,16 @@ body {
     margin:  0px;
     background-color: aquamarine;
 }
+h1 {
+    text-align: center;
+    font-size: 45px;
+}
 
 div.wrep {
-    
+   
     width: 800px;
     margin: auto;
+    margin-top: 50px;
 }
 
 #input {
@@ -18,10 +23,7 @@ div.wrep {
     font-size: 50px;
    
 }
-#input:hover {
-    background-color:  brown;
-    
-}
+
 
 
 #btn {
@@ -61,7 +63,7 @@ li.remove {
 .item button {
     position: absolute;
     width: 10%;
-    height: 38%;
+    height: 50%;
     right: 50px;
     top: 50%;
     transform: translateY(-50%);
@@ -69,3 +71,14 @@ li.remove {
 
     background-color: rgb(211, 113, 146);
 }
+
+ input[type=checkbox] {
+    position: absolute;
+    right: 187px;
+    width: 50px;
+    height: 50%;
+    transform: translateY(50%);
+    background-color:chartreuse;
+    
+}
+

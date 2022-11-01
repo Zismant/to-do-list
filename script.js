@@ -21,16 +21,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function render(inf) {
            let li = document.createElement('li');
            let btn = document.createElement("button");
-           btn.textContent = 'del'; 
+           let checkBox = document.createElement('input');
+           checkBox.type = 'checkbox';
+           btn.textContent = 'del   '; 
            li.innerHTML = `<div class='item'>${inf}</div>`;
            
            ul.append(li);
            li.firstChild.firstChild.after(btn);
+           li.firstChild.firstChild.after(checkBox);
+           
+
+           
 
            btn.addEventListener('click', () => {
-                li.classList.toggle('remove'); 
+                if(checkBox.checked) {
+                li.remove(); }  
            });
 
+           checkBox.addEventListener('click', () => {
+            li.classList.toggle('remove');
+            
+       });
         
            
         
