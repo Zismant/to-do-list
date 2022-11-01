@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
         if (!input.value) {return;}
  
-        console.log(input.value);
+        
         render(input.value);
         input.value = '';
        
@@ -20,11 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function render(inf) {
            let li = document.createElement('li');
-           li.innerHTML = `<div class='item'>${inf} <button>del</button></div>`;
-           ul.append(li);
-
+           let btn = document.createElement("button");
+           btn.textContent = 'del'; 
+           li.innerHTML = `<div class='item'>${inf}</div>`;
            
-        }
+           ul.append(li);
+           li.firstChild.firstChild.after(btn);
+
+           btn.addEventListener('click', () => {
+                li.classList.toggle('remove'); 
+           });
+
+        
+           
+        
+
+
+    }
 
 
     

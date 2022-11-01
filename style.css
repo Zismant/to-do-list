@@ -16,7 +16,13 @@ div.wrep {
     height: 100px;
     border-radius: 5%;
     font-size: 50px;
+   
 }
+#input:hover {
+    background-color:  brown;
+    
+}
+
 
 #btn {
     
@@ -46,6 +52,10 @@ ul {
    
     border-radius: 5%;
     background-color: rgb(225, 219, 37);
+}
+
+li.remove {
+    text-decoration: line-through;
 }
 
 .item button {
