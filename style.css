@@ -33,6 +33,20 @@ div.span {
    
 }
 
+#all, #filter, #dontFilter {
+    margin-top: 35px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10%;
+    font-size: 23px;
+    margin-left: 140px;
+}
+
+#all.active, #filter.active, #dontFilter.active {
+    background-color: rgb(245, 221, 10);
+}   
+
+
 
 #btn {
     width: 150px;

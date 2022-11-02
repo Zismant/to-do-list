@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.querySelector('#input'),
+          btnAll = document.querySelector('#all'),
+          btnFilter = document.querySelector('#filter'),
+          btnDontFilter = document.querySelector('#dontFilter'),
           btn = document.querySelector('#btn'),
           ul = document.querySelector('ul'),
           doListLength = document.querySelector('span'),
@@ -9,23 +12,53 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
         if (!input.value) {return;}
 
-
         data.push({dooo: input.value, check: false});
-        render();
-        input.value = '';
+        render(data);
+        input.value = '';       
+    });
+
+    btnAll.addEventListener('click', () => {
+        btnAll.classList.add('active');
+        btnFilter.classList.remove('active');
+        btnDontFilter.classList.remove('active');
+        render(data);  
         
-       
+    });
+    
+    btnFilter.addEventListener('click', () => {
+        btnAll.classList.remove('active');
+        btnFilter.classList.add('active');
+        btnDontFilter.classList.remove('active');      
+        ifChecked(data);
+    });
+
+    btnDontFilter.addEventListener('click', () => {
+        btnAll.classList.remove('active');
+        btnFilter.classList.remove('active');
+        btnDontFilter.classList.add('active');      
+        ifDontChecked(data);
     });
 
 
-    function render() {
+
+    function ifChecked(inf) {
+        const arr = inf.filter(item => item.check);
+        render(arr);
+    }
+
+    function ifDontChecked(inf) {
+        const arr = inf.filter(item => !item.check);
+        render(arr);
+    }
+
+    function render(inf) {
         console.log(data);
         doListLength.textContent = data.length;
         const uList = document.querySelectorAll('li');
 
         uList.forEach((item => item.remove()));
 
-        data.forEach((item, i) => {
+        inf.forEach((item, i) => {
        
            let li = document.createElement('li');
            let btn = document.createElement("button");
@@ -45,15 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => {
                  if(item.check) {
                  data.splice(i, 1); }  
-                 render();
+                 render(data);
             });
  
             checkBox.addEventListener('click', () => {
                 item.check = !item.check;
                 
-                render();
+                render(data);
             });
-         
+
 
         });
 
