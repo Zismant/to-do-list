@@ -1,4 +1,5 @@
 body {
+    position: relative;
     display: block;
     margin:  0px;
     background-color: aquamarine;
@@ -9,7 +10,7 @@ h1 {
 }
 
 div.wrep {
-   
+    
     width: 800px;
     margin: auto;
     margin-top: 50px;
@@ -24,15 +25,21 @@ div.wrep {
    
 }
 
+div.span {
+    position: absolute;
+    width: 200px;
+    right: 38px;
+    font-size: 26px;
+   
+}
 
 
 #btn {
-    
     width: 150px;
     height: 50px;
     border-radius: 10%;
     font-size: 23px;
-    margin-left: 20px;
+    margin-left: 34px;
 }
 
 ul {
