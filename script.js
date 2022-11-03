@@ -3,16 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
           btnAll = document.querySelector('#all'),
           btnFilter = document.querySelector('#filter'),
           btnDontFilter = document.querySelector('#dontFilter'),
-          btn = document.querySelector('#btn'),
+          btnAdd = document.querySelector('#btn'),
           ul = document.querySelector('ul'),
-          doListLength = document.querySelector('span'),
-          data = [];
+          doListLength = document.querySelector('span');
+    let data = [];
        
+    if (localStorage.length) {
+        data = JSON.parse(localStorage.getItem('inf'));
+    }
+    render(data);
 
-    btn.addEventListener('click', () => {
+    btnAdd.addEventListener('click', () => {
         if (!input.value) {return;}
-
+        
         data.push({dooo: input.value, check: false});
+        
+
         render(data);
         input.value = '';       
     });
@@ -52,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function render(inf) {
-        console.log(data);
+        localStorage.setItem('inf', JSON.stringify(data));
+        console.log(localStorage);
         doListLength.textContent = data.length;
         const uList = document.querySelectorAll('li');
 

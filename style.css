@@ -43,7 +43,7 @@ div.span {
 }
 
 #all.active, #filter.active, #dontFilter.active {
-    background-color: rgb(245, 221, 10);
+    background-color: rgb(10, 245, 10);
 }   
 
 
